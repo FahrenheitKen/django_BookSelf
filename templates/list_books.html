@@ -1,0 +1,44 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List Books</title>
+</head>
+<body>
+<div class="container">
+    <h1>Book List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Summary</th>
+                <th>Genre</th>
+{#                <th>Publish Date</th>#}
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for book in books  %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.isbn }}</td>
+            <td>{{ book.summary }}</td>
+            <td>{{ book.genre }}</td>
+{#            <td>{{ book.publish_date }}</td>#}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>
